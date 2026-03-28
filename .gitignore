@@ -1,0 +1,7 @@
+.env
+result.json
+parsed_messages.txt
+my_data.txt
+__pycache__/
+*.pyc
+vectors.db.npy
