@@ -1,11 +1,13 @@
 import asyncio
 import logging
 import os
+import AIconfig
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from data_processor import get_messages
-from ai_logic import prepare_database, get_ai_answer
+from ai_logic import prepare_database
+from core import handle_user
 
 load_dotenv()
 
@@ -23,12 +25,12 @@ async def start_handler(message: types.Message):
 @dp.message()
 async def echo_handler(message: types.Message):
     user_text = message.text
-    answer = get_ai_answer(user_text)
+    answer = handle_user(message.from_user.id, user_text)
     await message.answer(answer)
 
 async def main():
     print("Message downloading...")
-    history = get_messages('result')
+    history = get_messages(AIconfig.FAQ_FILE)
     print("Database preparing...")
     prepare_database(history)
     print("Bot is started and ready!")
