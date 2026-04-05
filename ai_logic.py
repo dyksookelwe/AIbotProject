@@ -7,9 +7,9 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 from data_processor import get_messages
 load_dotenv()
-VECTORS_FILE = 'vectors.db.npy'
+VECTORS_FILE = AIconfig.VECTORS_FILE
 
-client = OpenAI(api_key= os.getenv('DEEPSEEK_API_KEY'), base_url=os.getenv('BASE_URL'))
+client = OpenAI(api_key= os.getenv('AI_API_KEY'), base_url=os.getenv('BASE_URL'))
 model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
 vectors_database = None

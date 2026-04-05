@@ -91,5 +91,11 @@ This project helped me understand:
 git clone ...
 pip install -r requirements.txt
 python main.py
-
+```
 ---
+## Environment settings
+Create a file with the .env extension in the root of the project
+```
+BOT_TOKEN=your_telegram_bot_token
+AI_API_KEY=your_api_key
+BASE_URL=your_api_url

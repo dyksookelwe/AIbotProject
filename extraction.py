@@ -2,7 +2,7 @@ import AIconfig
 import os
 from openai import OpenAI
 
-client = OpenAI(api_key= os.getenv('DEEPSEEK_API_KEY'), base_url=os.getenv('BASE_URL'))
+client = OpenAI(api_key= os.getenv('AI_API_KEY'), base_url=os.getenv('BASE_URL'))
 
 def extract_name(text):
     extraction_prompt = """Извлеки имя пользователя из сообщения. Правила:
