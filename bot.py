@@ -7,7 +7,7 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from data_processor import get_messages
 from ai_logic import prepare_database
-from core import handle_user
+from app_core import handle_user
 
 load_dotenv()
 

@@ -1,15 +1,16 @@
-from core import user_states
+from states import user_states
 from extraction import extract_name, extract_goal, extract_format
 from rag_handler import rag_handler
-from core import is_valid
+from states import is_valid
 
 exit_words = ["не хочу", "передумал", "отмена","стоп"]
 question_words = ["сколько", "как", "где", "что", "цена"]
 
 def fsm_handler(user_id, text):
+    user_states.setdefault(user_id, {"state": None})
+    
     if any(word in text.lower() for word in question_words):
         return rag_handler(text)
-
 
     if any(word in text for word in exit_words):
         user_states[user_id]["state"] = None
