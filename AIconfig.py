@@ -1,6 +1,7 @@
 import os
 
 MODEL_NAME = "llama-3.3-70b-versatile"
+EXTRACTION_MODEL_NAME = "llama-3.1-8b-instant"
 TEMPERATURE = 0.8
 PRESENCE_PENALTY = 0.1
 MAX_TOKENS = 80
